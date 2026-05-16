@@ -6,6 +6,10 @@
   const $  = (s, c) => (c || document).querySelector(s);
   const $$ = (s, c) => Array.from((c || document).querySelectorAll(s));
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* low-power mode: mobile / touch devices — skip costly scroll effects */
+  const lowPerf = reduce ||
+    window.matchMedia('(max-width: 880px)').matches ||
+    window.matchMedia('(pointer: coarse)').matches;
 
   /* ---- build product render internals ---- */
   function buildProduct(el) {
@@ -88,17 +92,24 @@
     ticking = false;
   }
   function reqParallax() {
-    if (!ticking && !reduce) { requestAnimationFrame(parallax); ticking = true; }
+    if (!ticking && !lowPerf) { requestAnimationFrame(parallax); ticking = true; }
   }
 
-  window.addEventListener('scroll', () => { onScroll(); reqParallax(); }, { passive: true });
-  window.addEventListener('resize', () => { onScroll(); reqParallax(); }, { passive: true });
+  /* rAF-gated scroll handler — avoids running layout work on every event */
+  let scrollScheduled = false;
+  function onScrollRaf() {
+    if (scrollScheduled) return;
+    scrollScheduled = true;
+    requestAnimationFrame(() => { onScroll(); reqParallax(); scrollScheduled = false; });
+  }
+  window.addEventListener('scroll', onScrollRaf, { passive: true });
+  window.addEventListener('resize', onScrollRaf, { passive: true });
   onScroll(); reqParallax();
 
   /* ---- hero product subtle pointer tilt ---- */
   const heroProduct = $('#heroProduct');
   const heroStage = $('.hero__stage');
-  if (heroProduct && heroStage && !reduce) {
+  if (heroProduct && heroStage && !lowPerf) {
     heroStage.addEventListener('pointermove', (ev) => {
       const r = heroStage.getBoundingClientRect();
       const dx = (ev.clientX - r.left - r.width / 2) / r.width;
@@ -120,16 +131,20 @@
   /* ---- floating CTAs visibility ---- */
   const buyCard = $('#buyCard');
   const stickyCta = $('#stickyCta');
+  const heroEl = $('.hero');
+  const finalEl = $('#buy');
+  let heroH = heroEl ? heroEl.offsetHeight : 0;
+  window.addEventListener('resize', () => {
+    heroH = heroEl ? heroEl.offsetHeight : 0;
+  }, { passive: true });
   function updateFloatingCTAs(st) {
-    const heroH = $('.hero').offsetHeight;
-    const finalEl = $('#buy');
     const finalTop = finalEl ? finalEl.getBoundingClientRect().top : 9999;
     const past = st > heroH * 0.7;
     const atFinal = finalTop < window.innerHeight * 0.7;
     const show = past && !atFinal;
     buyCard.classList.toggle('is-visible', show);
     buyCard.classList.toggle('is-hidden', !show);
-    stickyCta.classList.toggle('is-visible', past && !atFinal);
+    stickyCta.classList.toggle('is-visible', show);
   }
 
   /* ---- colour swatches ---- */
