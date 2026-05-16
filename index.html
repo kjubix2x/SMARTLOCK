@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SMARTLOCK — Inteligentna kłódka z czytnikiem linii papilarnych</title>
+<meta name="description" content="Inteligentna kłódka z czytnikiem linii papilarnych. Odblokowanie w 1 sekundę. Zero kluczy. Bez aplikacji, bez telefonu." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===================== PRELOADER ===================== -->
+<div class="preloader" id="preloader">
+  <div class="preloader__mark">
+    <svg viewBox="0 0 60 60" width="60" height="60" aria-hidden="true">
+      <circle class="pl-ring" cx="30" cy="30" r="24" />
+      <path class="pl-print" d="M30 16c-7 0-13 6-13 13 0 4 1 7 1 7M30 22c-4 0-7 3-7 7 0 5 2 9 2 9M30 28c-1 0-2 1-2 3 0 6 3 11 3 11M38 21c2 3 3 6 3 9 0 7-3 13-3 13" />
+    </svg>
+  </div>
+  <span class="preloader__label">SMARTLOCK</span>
+</div>
+
+<!-- ===================== PROGRESS BAR ===================== -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#hero" class="nav__logo" aria-label="SMARTLOCK — strona główna">
+      <span class="nav__logo-mark"></span>
+      <span>SMARTLOCK</span>
+    </a>
+    <nav class="nav__links" aria-label="Nawigacja główna">
+      <a href="#how">Jak działa</a>
+      <a href="#features">Funkcje</a>
+      <a href="#reviews">Opinie</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#buy" class="btn btn--ghost nav__cta">Kup teraz · 99,99 zł</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ===================== 1. HERO ===================== -->
+<section class="hero" id="hero">
+  <div class="hero__glow hero__glow--a"></div>
+  <div class="hero__glow hero__glow--b"></div>
+  <div class="hero__grid"></div>
+
+  <div class="hero__content">
+    <div class="hero__copy reveal">
+      <span class="eyebrow"><span class="eyebrow__dot"></span>Nowa generacja zabezpieczeń</span>
+      <h1 class="hero__title">
+        Zapomnij o kluczach.<br />
+        <span class="grad-text">Otwieraj jednym dotknięciem.</span>
+      </h1>
+      <p class="hero__sub">
+        Inteligentna kłódka z czytnikiem linii papilarnych.<br />
+        <strong>1 sekunda. Zero kluczy. Maksimum wygody.</strong>
+      </p>
+      <div class="hero__actions">
+        <a href="#buy" class="btn btn--primary">Kup teraz</a>
+        <a href="#how" class="btn btn--line">
+          <span class="btn__play" aria-hidden="true"></span>
+          Zobacz jak działa
+        </a>
+      </div>
+      <ul class="hero__chips">
+        <li>Bez aplikacji</li>
+        <li>Bez Bluetooth</li>
+        <li>Bez WiFi</li>
+      </ul>
+    </div>
+
+    <div class="hero__stage reveal" data-parallax="0.18">
+      <div class="stage__halo"></div>
+      <div class="stage__shadow"></div>
+      <div class="product-float" id="heroProduct">
+        <!-- PRODUCT RENDER -->
+        <div class="product-render" data-product></div>
+      </div>
+      <div class="stage__spec stage__spec--1"><b>1s</b><span>odblokowanie</span></div>
+      <div class="stage__spec stage__spec--2"><b>10</b><span>odcisków</span></div>
+      <div class="stage__spec stage__spec--3"><b>12 mies.</b><span>na baterii</span></div>
+    </div>
+  </div>
+
+  <a href="#problem" class="hero__scroll" aria-label="Przewiń w dół">
+    <span class="hero__scroll-line"></span>
+    Przewiń
+  </a>
+</section>
+
+<!-- ===================== 2. PROBLEM -> SOLUTION ===================== -->
+<section class="section problem" id="problem">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow">Problem</span>
+      <h2 class="section__title">Klasyczne kłódki <span class="muted">zawodzą wtedy,<br />gdy najmniej tego oczekujesz.</span></h2>
+    </div>
+
+    <div class="problem__grid">
+      <article class="prob-card reveal">
+        <div class="prob-card__ic">
+          <svg viewBox="0 0 24 24"><path d="M3 12h6m6 0h6M9 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm12 0a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path d="M12 6v12"/></svg>
+        </div>
+        <h3>Zgubione klucze</h3>
+        <p>Jeden zgubiony klucz i jesteś odcięty od swoich rzeczy. Dorabianie kosztuje czas i nerwy.</p>
+      </article>
+      <article class="prob-card reveal">
+        <div class="prob-card__ic">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <h3>Zapomniane hasła</h3>
+        <p>Kombinacje cyfr łatwo wylatują z głowy. Kłódka szyfrowa to loteria pamięci.</p>
+      </article>
+      <article class="prob-card reveal">
+        <div class="prob-card__ic">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h10M4 17h7"/><path d="m16 14 5 5m0-5-5 5"/></svg>
+        </div>
+        <h3>Brak wygody</h3>
+        <p>Szukanie kluczy w torbie, w kieszeni, w rękawiczkach na mrozie. Każdego dnia.</p>
+      </article>
+      <article class="prob-card reveal">
+        <div class="prob-card__ic">
+          <svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Wolny dostęp</h3>
+        <p>Wkładanie klucza, przekręcanie, szarpanie. Sekundy, które sumują się w godziny.</p>
+      </article>
+    </div>
+
+    <div class="solution reveal">
+      <div class="solution__copy">
+        <span class="eyebrow eyebrow--accent">Rozwiązanie</span>
+        <h2 class="section__title">Twój palec jest <span class="grad-text">jedynym kluczem</span>, jakiego potrzebujesz.</h2>
+        <p class="lead">
+          SMARTLOCK rozpoznaje Twój odcisk i otwiera się w mniej niż sekundę. Bez kluczy, bez kodów,
+          bez telefonu. Technologia, która po prostu znika z drogi.
+        </p>
+        <ul class="solution__list">
+          <li><span class="check"></span>Skaner reaguje natychmiast po dotknięciu</li>
+          <li><span class="check"></span>Działa bez internetu, aplikacji i parowania</li>
+          <li><span class="check"></span>Pełna kontrola — do 10 zaufanych odcisków</li>
+        </ul>
+      </div>
+      <div class="solution__stage" data-parallax="0.1">
+        <div class="solution__halo"></div>
+        <div class="product-render product-render--sm" data-product data-variant="graphite"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. HOW IT WORKS ===================== -->
+<section class="section how" id="how">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow">Prościej się nie da</span>
+      <h2 class="section__title">Trzy kroki. <span class="muted">Raz na zawsze.</span></h2>
+    </div>
+
+    <div class="steps">
+      <div class="steps__line" aria-hidden="true"><span id="stepsProgress"></span></div>
+
+      <article class="step reveal" data-step="1">
+        <div class="step__num">01</div>
+        <div class="step__ic">
+          <svg viewBox="0 0 48 48" class="ic-anim ic-add">
+            <path d="M24 12c-7 0-12 6-12 13 0 3 1 6 1 6M24 18c-4 0-7 3-7 8 0 5 2 9 2 9M24 24c-2 0-3 2-3 5 0 5 2 9 2 9M30 16c2 3 3 7 3 11 0 6-2 11-2 11"/>
+            <circle cx="36" cy="14" r="7" class="ic-badge"/>
+            <path d="M36 11v6M33 14h6" class="ic-plus"/>
+          </svg>
+        </div>
+        <h3>Dodaj odcisk</h3>
+        <p>Przyłóż palec kilka razy do sensora. Kłódka uczy się Twojego odcisku w kilkanaście sekund.</p>
+      </article>
+
+      <article class="step reveal" data-step="2">
+        <div class="step__num">02</div>
+        <div class="step__ic">
+          <svg viewBox="0 0 48 48" class="ic-anim ic-touch">
+            <circle cx="24" cy="24" r="14" class="ic-pulse"/>
+            <circle cx="24" cy="24" r="14" class="ic-pulse ic-pulse--2"/>
+            <path d="M24 16c-4 0-7 4-7 8 0 2 .5 4 .5 4M24 20c-2 0-3 2-3 4 0 3 1 6 1 6M28 18c1 2 2 4 2 7 0 4-1 7-1 7"/>
+          </svg>
+        </div>
+        <h3>Dotknij sensora</h3>
+        <p>Połóż palec na metalowym pierścieniu skanera. Bez przycisków, bez przekręcania.</p>
+      </article>
+
+      <article class="step reveal" data-step="3">
+        <div class="step__num">03</div>
+        <div class="step__ic">
+          <svg viewBox="0 0 48 48" class="ic-anim ic-open">
+            <rect x="14" y="22" width="20" height="16" rx="3" class="ic-body"/>
+            <path d="M19 22v-5a5 5 0 0 1 10 0" class="ic-shackle"/>
+            <circle cx="24" cy="30" r="2.4" class="ic-keyhole"/>
+          </svg>
+        </div>
+        <h3>Otwórz w 1 sekundę</h3>
+        <p>Zielone potwierdzenie i kłódka jest otwarta. Szybciej niż wyjmiesz klucz z kieszeni.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. FEATURES ===================== -->
+<section class="section features" id="features">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow">Specyfikacja</span>
+      <h2 class="section__title">Zaprojektowana w każdym <span class="grad-text">detalu.</span></h2>
+      <p class="section__intro">Matowy metal, precyzyjny sensor, zero zbędnych elementów. Sprzęt, który wygląda i działa jak premium.</p>
+    </div>
+
+    <div class="feat-grid">
+      <article class="feat feat--wide reveal">
+        <div class="feat__media">
+          <div class="exploded">
+            <div class="exploded__part exploded__part--shackle product-render product-render--part" data-product data-part="shackle"></div>
+            <div class="exploded__part exploded__part--sensor"></div>
+            <div class="exploded__part exploded__part--body product-render product-render--part" data-product data-part="body"></div>
+          </div>
+          <span class="feat__tag">Widok eksplodowany</span>
+        </div>
+        <div class="feat__txt">
+          <h3>Konstrukcja, której nie widać — bo działa bezbłędnie</h3>
+          <p>Hartowany pałąk, anodowana obudowa i zintegrowany moduł skanera. Każdy element ma swoje miejsce.</p>
+        </div>
+      </article>
+
+      <article class="feat reveal">
+        <div class="feat__icon"><span class="big-num">1<small>s</small></span></div>
+        <h3>1 sekunda do odblokowania</h3>
+        <p>Sensor rozpoznaje odcisk natychmiast po dotknięciu.</p>
+      </article>
+
+      <article class="feat reveal">
+        <div class="feat__icon"><span class="big-num">10</span></div>
+        <h3>10 zapisanych odcisków</h3>
+        <p>Dostęp dla rodziny lub zespołu — w pełni pod Twoją kontrolą.</p>
+      </article>
+
+      <article class="feat feat--sensor reveal">
+        <div class="feat__media feat__media--sensor">
+          <div class="sensor-closeup">
+            <div class="sensor-closeup__ring"></div>
+            <div class="sensor-closeup__scan"></div>
+            <svg viewBox="0 0 80 80" class="sensor-closeup__print">
+              <path d="M40 22c-11 0-19 9-19 20 0 5 1 9 1 9M40 31c-6 0-11 5-11 12 0 8 3 14 3 14M40 40c-2 0-4 2-4 6 0 9 4 16 4 16M51 27c3 4 5 9 5 15 0 10-3 18-3 18"/>
+            </svg>
+          </div>
+          <span class="feat__tag">Zbliżenie sensora</span>
+        </div>
+        <div class="feat__txt">
+          <h3>Sensor czuły jak skóra</h3>
+          <p>Metalowy pierścień skanera odczytuje linie papilarne pod każdym kątem — także mokrym palcem.</p>
+        </div>
+      </article>
+
+      <article class="feat reveal">
+        <div class="feat__icon">
+          <svg viewBox="0 0 24 24" class="feat__svg"><path d="M9 7V4h6v3M7 7h10v3a5 5 0 0 1-5 5 5 5 0 0 1-5-5V7ZM12 15v4M8 19h8"/></svg>
+        </div>
+        <h3>Ładowanie USB</h3>
+        <p>Jeden kabel, który masz już w domu. Pełne naładowanie w godzinę.</p>
+      </article>
+
+      <article class="feat reveal">
+        <div class="feat__icon">
+          <svg viewBox="0 0 24 24" class="feat__svg"><rect x="3" y="8" width="15" height="9" rx="2"/><path d="M18 11h2v3h-2M6 11v3M9 11v3M12 11v3"/></svg>
+        </div>
+        <h3>Do 12 miesięcy pracy</h3>
+        <p>Jedno ładowanie wystarcza na cały rok normalnego użytkowania.</p>
+      </article>
+
+      <article class="feat feat--rotate reveal">
+        <div class="feat__media feat__media--rotate">
+          <div class="rotate-stage">
+            <div class="product-render product-render--rotate" data-product data-variant="red"></div>
+          </div>
+          <span class="feat__tag">Obrót 360°</span>
+        </div>
+        <div class="feat__txt">
+          <h3>Kompaktowa i lekka</h3>
+          <p>Mieści się w dłoni i waży tyle co pęk kluczy. Karabińczyk pozwala przypiąć ją wszędzie — plecak, walizka, rower.</p>
+          <ul class="feat__mini">
+            <li>Kompaktowy design</li>
+            <li>Lekka konstrukcja</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. LIFESTYLE ===================== -->
+<section class="section lifestyle" id="lifestyle">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow">W Twoim świecie</span>
+      <h2 class="section__title">Jedna kłódka. <span class="muted">Każda sytuacja.</span></h2>
+      <p class="section__intro">Od porannego treningu po weekendowy wypad - SMARTLOCK jest tam, gdzie Ty.</p>
+    </div>
+
+    <div class="life-grid">
+      <figure class="life-card reveal">
+        <img class="life-img" src="1.jpg_.avif" alt="Kłódka SMARTLOCK na siłowni" loading="lazy" />
+        <figcaption>Michał K.</figcaption>
+      </figure>
+
+      <figure class="life-card reveal">
+        <img class="life-img" src="2.avif" alt="Kłódka SMARTLOCK w podróży" loading="lazy" />
+        <figcaption>Anna W.</figcaption>
+      </figure>
+
+      <figure class="life-card reveal">
+        <img class="life-img" src="3.avif" alt="Kłódka SMARTLOCK przy rowerze" loading="lazy" />
+        <figcaption>Rafał S.</figcaption>
+      </figure>
+
+      <figure class="life-card reveal">
+        <img class="life-img" src="4.avif" alt="Kłódka SMARTLOCK na szafce" loading="lazy" />
+        <figcaption>Julia D.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. SOCIAL PROOF ===================== -->
+<section class="section reviews" id="reviews">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow">Opinie klientów</span>
+      <h2 class="section__title">Ocena <span class="grad-text">4,9 / 5</span> <span class="muted">od ponad 2 400 osób.</span></h2>
+    </div>
+
+    <div class="rev-grid">
+      <article class="rev-card reveal">
+        <div class="stars" aria-label="5 na 5">★★★★★</div>
+        <p>„Zostawiłem klucze w przeszłości. Otwieram szafkę na siłowni szybciej niż koledzy zdejmują kłódkę szyfrową.”</p>
+        <footer><span class="rev-card__av">MK</span><div><b>Michał K.</b><small>Zweryfikowany zakup</small></div></footer>
+      </article>
+      <article class="rev-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>„Wygląda jak produkt Apple. Matowa obudowa, ciężarek w dłoni — czuć jakość. Najlepszy gadżet tego roku.”</p>
+        <footer><span class="rev-card__av">AW</span><div><b>Anna W.</b><small>Zweryfikowany zakup</small></div></footer>
+      </article>
+      <article class="rev-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>„Bateria trzyma i trzyma. Ładowałem raz, od pół roku ani razu mnie nie zawiodła.”</p>
+        <footer><span class="rev-card__av">PT</span><div><b>Piotr T.</b><small>Zweryfikowany zakup</small></div></footer>
+      </article>
+      <article class="rev-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>„Zapisałam odciski całej rodziny. Każdy ma dostęp do piwnicy bez kombinowania z kluczami.”</p>
+        <footer><span class="rev-card__av">KN</span><div><b>Katarzyna N.</b><small>Zweryfikowany zakup</small></div></footer>
+      </article>
+      <article class="rev-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>„Bez aplikacji, bez Bluetooth, bez kombinowania. Po prostu działa. Dokładnie tego szukałem.”</p>
+        <footer><span class="rev-card__av">RS</span><div><b>Rafał S.</b><small>Zweryfikowany zakup</small></div></footer>
+      </article>
+      <article class="rev-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>„Przypinam ją do plecaka w podróży. Lekka, solidna i wygląda obłędnie. Polecam każdemu.”</p>
+        <footer><span class="rev-card__av">JD</span><div><b>Julia D.</b><small>Zweryfikowany zakup</small></div></footer>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 7. FAQ ===================== -->
+<section class="section faq" id="faq">
+  <div class="container container--narrow">
+    <div class="section__head reveal">
+      <span class="eyebrow">Pytania i odpowiedzi</span>
+      <h2 class="section__title">Wszystko, <span class="muted">co chcesz wiedzieć.</span></h2>
+    </div>
+
+    <div class="acc">
+      <details class="acc__item reveal">
+        <summary>Czy kłódka potrzebuje aplikacji lub połączenia z telefonem?<span class="acc__ic"></span></summary>
+        <div class="acc__body"><p>Nie. SMARTLOCK działa całkowicie samodzielnie - bez aplikacji, bez telefonu, bez Bluetooth i bez WiFi. Wszystko obsługujesz bezpośrednio na urządzeniu.</p></div>
+      </details>
+      <details class="acc__item reveal">
+        <summary>Co się stanie, gdy rozładuje się bateria?<span class="acc__ic"></span></summary>
+        <div class="acc__body"><p>Kłódka z dużym wyprzedzeniem sygnalizuje niski poziom baterii. Wystarczy podłączyć ją na chwilę kablem USB — odcisków nie tracisz, pozostają zapisane w pamięci.</p></div>
+      </details>
+      <details class="acc__item reveal">
+        <summary>Ile odcisków palców mogę zapisać?<span class="acc__ic"></span></summary>
+        <div class="acc__body"><p>Do 10 różnych odcisków. Możesz dodać własne palce oraz osoby, którym ufasz, i w każdej chwili zarządzać dostępem.</p></div>
+      </details>
+      <details class="acc__item reveal">
+        <summary>Czy sensor działa, gdy mam mokre lub brudne palce?<span class="acc__ic"></span></summary>
+        <div class="acc__body"><p>Tak. Skaner odczytuje linie papilarne także wilgotnym palcem. Przy mocno zabrudzonej skórze warto ją przetrzeć — działa wtedy bezbłędnie.</p></div>
+      </details>
+      <details class="acc__item reveal">
+        <summary>Do czego mogę jej używać?<span class="acc__ic"></span></summary>
+        <div class="acc__body"><p>Szafki na siłowni, walizki, plecaki, rowery, drzwi piwnicy, magazynki, bramki — wszędzie tam, gdzie sprawdza się klasyczna kłódka, tylko wygodniej.</p></div>
+      </details>
+      <details class="acc__item reveal">
+        <summary>Jak długo trwa dostawa i czy mogę zwrócić produkt?<span class="acc__ic"></span></summary>
+        <div class="acc__body"><p>Wysyłka w 24 h, dostawa zwykle w 1–2 dni robocze. Masz 14 dni na zwrot bez podania przyczyny oraz 24-miesięczną gwarancję.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 8. FINAL CTA ===================== -->
+<section class="section final" id="buy">
+  <div class="final__glow"></div>
+  <div class="container">
+    <div class="final__inner reveal">
+      <div class="final__product" data-parallax="0.12">
+        <div class="final__halo"></div>
+        <div class="product-render product-render--lg" data-product></div>
+      </div>
+      <div class="final__copy">
+        <span class="eyebrow eyebrow--accent">Ostatni krok</span>
+        <h2 class="final__title">Twój klucz jest <span class="grad-text">zawsze przy Tobie.</span></h2>
+        <p class="lead">Dołącz do tysięcy osób, które już zapomniały, jak to jest szukać kluczy.</p>
+        <div class="final__price">
+          <span class="final__price-now">99,99 zł</span>
+          <span class="final__price-old">179,99 zł</span>
+          <span class="final__price-badge">Promocja -44%</span>
+        </div>
+        <div class="urgency">
+          <span class="urgency__pulse"></span>
+          Ograniczona liczba sztuk w cenie promocyjnej — partia limitowana
+        </div>
+        <a href="#buy" class="btn btn--primary btn--xl" data-buy>Zamów teraz</a>
+        <ul class="final__assure">
+          <li>Wysyłka 24 h</li>
+          <li>14 dni na zwrot</li>
+          <li>Gwarancja 24 mies.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FLOATING PURCHASE CARD (DESKTOP) ===================== -->
+<aside class="buy-card" id="buyCard" aria-label="Karta zakupu">
+  <div class="buy-card__media">
+    <div class="product-render product-render--mini" data-product></div>
+  </div>
+  <div class="buy-card__price">
+    <span class="buy-card__now">99,99 zł</span>
+    <span class="buy-card__old">179,99 zł</span>
+    <span class="buy-card__save">-44%</span>
+  </div>
+  <p class="buy-card__name">Inteligentna kłódka SMARTLOCK</p>
+  <div class="buy-card__variants" role="group" aria-label="Kolor">
+    <button class="swatch swatch--black is-active" data-swatch="black" aria-label="Matte black"></button>
+    <button class="swatch swatch--graphite" data-swatch="graphite" aria-label="Graphite"></button>
+    <button class="swatch swatch--red" data-swatch="red" aria-label="Deep red"></button>
+  </div>
+  <button class="btn btn--primary btn--block" data-buy>Kup teraz</button>
+  <div class="buy-card__trust">
+    <span>✓ Wysyłka 24 h</span><span>✓ 14 dni na zwrot</span>
+  </div>
+</aside>
+
+<!-- ===================== STICKY BOTTOM CTA (MOBILE) ===================== -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta__info">
+    <span class="sticky-cta__price">99,99 zł <s>179,99 zł</s></span>
+    <span class="sticky-cta__name">Kłódka SMARTLOCK</span>
+  </div>
+  <button class="btn btn--primary" data-buy>Kup teraz</button>
+</div>
+
+<!-- ===================== TOAST ===================== -->
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <span class="toast__ic"></span>
+  <span class="toast__msg">Dodano do koszyka — przekierowuję do kasy…</span>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="nav__logo-mark"></span>
+      <span>SMARTLOCK</span>
+    </div>
+    <p class="footer__tag">Inteligentne zabezpieczenia. Zero kluczy.</p>
+    <nav class="footer__links" aria-label="Stopka">
+      <a href="#features">Funkcje</a>
+      <a href="#faq">FAQ</a>
+      <a href="#buy">Kup</a>
+    </nav>
+    <small class="footer__copy">© 2026 SMARTLOCK. Wszelkie prawa zastrzeżone.</small>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
