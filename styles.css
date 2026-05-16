@@ -874,3 +874,56 @@ img,svg{display:block;max-width:100%}
 .footer__links a:hover{color:var(--txt)}
 .footer__copy{color:var(--txt-3);font-size:.78rem;margin-top:8px}
 @media(min-width:881px){.footer{padding-bottom:48px}}
+
+/* =========================================================
+   MOBILE PERFORMANCE — lighten heavy effects on phones
+   blur filters + backdrop-filter + animated blurred layers
+   are the main cause of lag on mobile GPUs.
+   ========================================================= */
+@media(max-width:880px){
+
+  /* --- kill backdrop-filter (very costly on mobile) --- */
+  .nav.is-stuck{background:rgba(8,8,10,.95);backdrop-filter:none}
+  .sticky-cta{background:rgba(10,11,13,.98);backdrop-filter:none}
+  .toast{background:rgba(16,17,21,.98);backdrop-filter:none}
+  .eyebrow{backdrop-filter:none;background:rgba(255,255,255,.06)}
+  .feat__tag{backdrop-filter:none;background:rgba(0,0,0,.7)}
+  .stage__spec{backdrop-filter:none;background:rgba(16,17,21,.96)}
+  .btn--line,.btn--ghost{backdrop-filter:none}
+  .ph__label{backdrop-filter:none}
+
+  /* --- shrink huge blur radii (paint cost grows with radius) --- */
+  .hero__glow{filter:blur(45px);opacity:.32}
+  .hero__glow--a{width:340px;height:340px}
+  .hero__glow--b{width:360px;height:360px}
+  .final__glow{filter:blur(60px);width:420px;height:420px;bottom:-280px}
+  .hero__grid{-webkit-mask-image:none;mask-image:none;opacity:.5}
+
+  /* --- stop animating blurred layers (repaints every frame) --- */
+  .stage__halo{animation:none}
+  .stage__shadow{animation:none}
+  .solution__halo,.final__halo{filter:blur(20px)}
+
+  /* --- disable decorative loops, keep core float --- */
+  .stage__spec{animation:none}
+  .pr-sensor::after{animation:none;display:none}
+  .ph::before{animation:none}
+  .feat--sensor.in .sensor-closeup__scan{animation:none;opacity:.6}
+  .feat--rotate.in .product-render--rotate{animation:none}
+  .hero__scroll-line::after{animation:none}
+
+  /* --- gentler, GPU-friendly float --- */
+  .product-float{animation-duration:7s}
+  .product-float .product-render{transform:none}
+
+  /* --- snappier reveal, no stagger delays --- */
+  .reveal{transition-duration:.55s}
+  .reveal[data-d]{transition-delay:0s}
+}
+
+/* touch devices: neutralise hover-scale jank */
+@media(hover:none){
+  .feat:hover,.prob-card:hover,.step:hover,.rev-card:hover{transform:none}
+  .life-card:hover .life-img{transform:none}
+  .btn--primary:hover,.btn--line:hover{transform:none}
+}
